@@ -107,14 +107,15 @@ flowchart TD
 
 1. **Elaborar o relatório** (*Discente*). Redigir o relatório com os tópicos exigidos e revisá-lo com o(a) orientador(a).
 2. **Definir banca e data** (*Orientador(a)*). Indicar os três membros, a data, o horário e o local ou link, de modo que o exame termine até o 14º mês de curso.
-3. **Preencher o requerimento** (*Discente*). Preencher o Requerimento de Inscrição no Exame de Qualificação e o Anexo I, com dados do aluno, título, data, local, horário e banca. O documento leva a assinatura do(a) discente e do(a) orientador(a).
-4. **Depositar na Secretaria** (*Discente*). Entregar o requerimento e uma cópia do relatório. A partir do depósito, o exame deve ocorrer em até 2 meses.
-5. **Conferência** (*Secretaria*). A Secretaria registra o protocolo e confere os créditos, a aprovação em Seminários e os documentos. Se faltar algum item, o(a) discente complementa e reapresenta.
-6. **Aprovação da banca** (*Colegiado*). O Colegiado aprova a comissão examinadora (Regulamento, Art. 17, XXIII), e a Secretaria divulga a data e o local.
-7. **Envio à banca** (*Discente*). O(a) discente envia o relatório a cada membro com antecedência razoável.
-8. **Realização do exame** (*Banca*). O(a) discente apresenta o seminário e, em seguida, cada examinador faz sua arguição.
-9. **Registro** (*Secretaria*). A Secretaria arquiva a ata e lança os 4 créditos do exame no histórico.
-10. **Segundo exame** (*Discente*). Em caso de reprovação, o segundo exame deve ocorrer em até 30 dias após o primeiro. Se não ocorrer nesse prazo, o(a) discente é considerado(a) reprovado(a) novamente.
+3. **Realizar o convite** (*Discente*). Enviar e-mail ou comunicação formal aos integrantes sugeridos, verificando disponibilidade de dia e horário.
+4. **Preencher o requerimento** (*Discente*). Preencher o Requerimento de Inscrição no Exame de Qualificação e o Anexo I, com dados do aluno, título, data, local, horário e banca. O documento leva a assinatura do(a) discente e do(a) orientador(a).
+5. **Depositar na Secretaria** (*Discente*). Entregar o requerimento e uma cópia do relatório. A partir do depósito, o exame deve ocorrer em até 2 meses.
+6. **Conferência** (*Secretaria*). A Secretaria registra o protocolo e confere os créditos, a aprovação em Seminários e os documentos. Se faltar algum item, o(a) discente complementa e reapresenta.
+7. **Aprovação da banca** (*Colegiado*). O Colegiado aprova a comissão examinadora (Regulamento, Art. 17, XXIII), e a Secretaria divulga a data e o local.
+8. **Envio à banca** (*Discente*). O(a) discente envia o relatório a cada membro com antecedência razoável.
+9. **Realização do exame** (*Banca*). O(a) discente apresenta o seminário e, em seguida, cada examinador faz sua arguição.
+10. **Registro** (*Secretaria*). A Secretaria arquiva a ata e lança os 4 créditos do exame no histórico.
+11. **Segundo exame** (*Discente*). Em caso de reprovação, o segundo exame deve ocorrer em até 30 dias após o primeiro. Se não ocorrer nesse prazo, o(a) discente é considerado(a) reprovado(a) novamente.
 
 ## Prazos
 
