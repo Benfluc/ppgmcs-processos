@@ -1,0 +1,7 @@
+{
+  "name": "ppgmcs-processos",
+  "private": true,
+  "description": "Geração dos PDFs dos processos do PPGMCS a partir dos arquivos Markdown",
+  "scripts": { "pdf": "python3 scripts/gerar_pdfs.py" },
+  "dependencies": { "mermaid": "^11.0.0" }
+}
