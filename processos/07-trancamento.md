@@ -35,27 +35,47 @@ Como suspender a matrícula em uma ou mais disciplinas (trancamento parcial) ou 
 
 ```mermaid
 flowchart TD
-    i(["Necessidade de interromper atividades"]):::terminal --> d0
-    d0{"Tipo de<br/>trancamento?"}:::discente
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Necessidade de interromper atividades"])
+    d0{"Tipo de<br/>trancamento?"}
+    e1["Verificar se está no 1º terço da carga horária<br/>e se nunca trancou a disciplina (Discente)"]
+    e2["Dar anuência<br/>(Orientador)"]
+    e3["Protocolar o pedido<br/>(Discente)"]
+    e5["Reunir a justificativa e os comprovantes<br/>dos motivos relevantes (Discente)"]
+    e6["Dar anuência<br/>(Orientador)"]
+    e7["Protocolar o pedido<br/>(Discente)"]
+    e4["Conferir prazo, anuência e histórico<br/>de trancamentos (Secretaria)"]
+    d1{"Pedido<br/>deferido?"}
+    e8["Registrar o trancamento<br/>(Secretaria)"]
+    f1(["Trancamento registrado"])
+    f2(["Matrícula mantida"])
+
+    %% Ligações entre as etapas
+    inicio --> d0
     d0 -->|Parcial| e1
     d0 -->|Total| e5
-    e1["Verificar se está no 1º terço da carga horária<br/>e se nunca trancou a disciplina (Discente)"]:::discente --> e2
-    e2["Dar anuência<br/>(Orientador)"]:::orientador --> e3
-    e3["Protocolar o pedido<br/>(Discente)"]:::discente --> e4
-    e5["Reunir a justificativa e os comprovantes<br/>dos motivos relevantes (Discente)"]:::discente --> e6
-    e6["Dar anuência<br/>(Orientador)"]:::orientador --> e7
-    e7["Protocolar o pedido<br/>(Discente)"]:::discente --> e4
-    e4["Conferir prazo, anuência e histórico<br/>de trancamentos (Secretaria)"]:::secretaria --> d1
-    d1{"Pedido<br/>deferido?"}:::colegiado
-    d1 -->|Sim| e8["Registrar o trancamento<br/>(Secretaria)"]:::secretaria
-    e8 --> f1(["Trancamento registrado"]):::terminal
-    d1 -->|Não| f2(["Matrícula mantida"]):::terminal
+    e1 --> e2
+    e2 --> e3
+    e3 --> e4
+    e5 --> e6
+    e6 --> e7
+    e7 --> e4
+    e4 --> d1
+    d1 -->|Sim| e8
+    e8 --> f1
+    d1 -->|Não| f2
 
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef orientador fill:#E9F6EE,stroke:#2E8B57,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef colegiado fill:#F3ECFA,stroke:#7B4FB0,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f1,f2 terminal
+    class d0,e1,e3,e5,e7 discente
+    class e2,e6 orientador
+    class e4,e8 secretaria
+    class d1 colegiado
 ```
 
 *Cores: azul = discente; verde = orientador(a); laranja = Secretaria; roxo = Colegiado.*

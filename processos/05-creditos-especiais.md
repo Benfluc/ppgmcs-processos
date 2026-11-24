@@ -45,23 +45,41 @@ Como obter créditos por produção acadêmica ligada ao projeto de dissertaçã
 
 ```mermaid
 flowchart TD
-    i(["Produção ligada ao projeto de dissertação"]):::terminal --> e1
-    e1["Publicar, apresentar ou depositar,<br/>com o orientador (Discente)"]:::discente --> e2
-    e2["Reunir os comprovantes<br/>(Discente)"]:::discente --> e3
-    e3["Dar anuência ao pedido<br/>(Orientador)"]:::orientador --> e4
-    e4["Protocolar o pedido indicando a<br/>disciplina A, B ou C (Discente)"]:::discente --> e5
-    e5["Conferir os comprovantes e o item<br/>da tabela (Secretaria)"]:::secretaria --> d1
-    d1{"Colegiado<br/>homologa?"}:::colegiado
-    d1 -->|Não| e7["Complementar a comprovação ou<br/>apresentar outra atividade (Discente)"]:::discente
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Produção ligada ao projeto de dissertação"])
+    e1["Publicar, apresentar ou depositar,<br/>com o orientador (Discente)"]
+    e2["Reunir os comprovantes<br/>(Discente)"]
+    e3["Dar anuência ao pedido<br/>(Orientador)"]
+    e4["Protocolar o pedido indicando a<br/>disciplina A, B ou C (Discente)"]
+    e5["Conferir os comprovantes e o item<br/>da tabela (Secretaria)"]
+    d1{"Colegiado<br/>homologa?"}
+    e7["Complementar a comprovação ou<br/>apresentar outra atividade (Discente)"]
+    e6["Lançar a disciplina no histórico<br/>(Secretaria)"]
+    f1(["Créditos Especiais integralizados"])
+
+    %% Ligações entre as etapas
+    inicio --> e1
+    e1 --> e2
+    e2 --> e3
+    e3 --> e4
+    e4 --> e5
+    e5 --> d1
+    d1 -->|Não| e7
     e7 --> e2
     d1 -->|Sim| e6
-    e6["Lançar a disciplina no histórico<br/>(Secretaria)"]:::secretaria --> f1(["Créditos Especiais integralizados"]):::terminal
+    e6 --> f1
 
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef orientador fill:#E9F6EE,stroke:#2E8B57,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef colegiado fill:#F3ECFA,stroke:#7B4FB0,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f1 terminal
+    class e1,e2,e4,e7 discente
+    class e3 orientador
+    class e5,e6 secretaria
+    class d1 colegiado
 ```
 
 *Cores: azul = discente; verde = orientador(a); laranja = Secretaria; roxo = Colegiado.*

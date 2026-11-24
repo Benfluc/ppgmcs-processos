@@ -41,22 +41,39 @@ Aprovação com conceito mínimo C e 75% de frequência (Regulamento, Art. 38).
 
 ```mermaid
 flowchart TD
-    i(["Necessidade de estudo não coberto<br/>pelas disciplinas regulares"]):::terminal --> e1
-    e1["Elaborar o plano de ensino: ementa,<br/>bibliografia, 60 h e avaliação (Docente)"]:::orientador --> e2
-    e2["Submeter a proposta de oferta<br/>à Coordenação (Docente)"]:::orientador --> d1
-    d1{"Oferta<br/>aprovada?"}:::colegiado
-    d1 -->|Não| e2b["Ajustar a proposta<br/>(Docente)"]:::orientador
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Necessidade de estudo não coberto<br/>pelas disciplinas regulares"])
+    e1["Elaborar o plano de ensino: ementa,<br/>bibliografia, 60 h e avaliação (Docente)"]
+    e2["Submeter a proposta de oferta<br/>à Coordenação (Docente)"]
+    d1{"Oferta<br/>aprovada?"}
+    e2b["Ajustar a proposta<br/>(Docente)"]
+    e3["Matricular-se com anuência<br/>do orientador (Discente)"]
+    e4["Conduzir os estudos e avaliar:<br/>conceito e frequência (Docente)"]
+    e5["Lançar o resultado no histórico<br/>(Secretaria)"]
+    f1(["4 créditos optativos"])
+
+    %% Ligações entre as etapas
+    inicio --> e1
+    e1 --> e2
+    e2 --> d1
+    d1 -->|Não| e2b
     e2b --> e2
     d1 -->|Sim| e3
-    e3["Matricular-se com anuência<br/>do orientador (Discente)"]:::discente --> e4
-    e4["Conduzir os estudos e avaliar:<br/>conceito e frequência (Docente)"]:::orientador --> e5
-    e5["Lançar o resultado no histórico<br/>(Secretaria)"]:::secretaria --> f1(["4 créditos optativos"]):::terminal
+    e3 --> e4
+    e4 --> e5
+    e5 --> f1
 
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef orientador fill:#E9F6EE,stroke:#2E8B57,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef colegiado fill:#F3ECFA,stroke:#7B4FB0,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f1 terminal
+    class e1,e2,e2b,e4 orientador
+    class d1 colegiado
+    class e3 discente
+    class e5 secretaria
 ```
 
 *Cores: azul = discente; verde = docente responsável; roxo = Colegiado; laranja = Secretaria.*

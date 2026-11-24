@@ -46,30 +46,52 @@ Como solicitar, agendar e realizar a defesa pública do trabalho de conclusão d
 
 ```mermaid
 flowchart TD
-    i(["Qualificação aprovada e<br/>28 créditos em disciplinas"]):::terminal --> e1
-    e1["Definir banca de no mínimo 3 membros,<br/>data, horário e local (Orientador)"]:::orientador --> e2
-    e2["Preencher o requerimento e o Anexo I<br/>com assinaturas (Discente)"]:::discente --> e3
-    e3["Depositar na Secretaria: requerimento,<br/>trabalho, aceite do artigo e CEP (Discente)"]:::discente --> d1
-    d1{"Requisitos e<br/>documentos ok?"}:::secretaria
-    d1 -->|Não| e3b["Complementar a documentação<br/>(Discente)"]:::discente
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Qualificação aprovada e<br/>28 créditos em disciplinas"])
+    e1["Definir banca de no mínimo 3 membros,<br/>data, horário e local (Orientador)"]
+    e2["Preencher o requerimento e o Anexo I<br/>com assinaturas (Discente)"]
+    e3["Depositar na Secretaria: requerimento,<br/>trabalho, aceite do artigo e CEP (Discente)"]
+    d1{"Requisitos e<br/>documentos ok?"}
+    e3b["Complementar a documentação<br/>(Discente)"]
+    e4["Aprovar e designar a banca<br/>(Colegiado)"]
+    e5["Enviar o trabalho aos membros<br/>da banca (Discente)"]
+    e6["Sessão pública de defesa<br/>(Banca)"]
+    d2{"Aprovação<br/>unânime?"}
+    e8["Pode conceder nova defesa<br/>(Colegiado)"]
+    e7["Entregar a versão final, a versão eletrônica<br/>e o termo de divulgação em até 60 dias (Discente)"]
+    e9["Conferir a quitação com a Biblioteca e<br/>enviar os documentos à PRPG (Secretaria)"]
+    f1(["Diploma de Mestre expedido"])
+
+    %% Ligações entre as etapas
+    inicio --> e1
+    e1 --> e2
+    e2 --> e3
+    e3 --> d1
+    d1 -->|Não| e3b
     e3b --> e3
     d1 -->|Sim| e4
-    e4["Aprovar e designar a banca<br/>(Colegiado)"]:::colegiado --> e5
-    e5["Enviar o trabalho aos membros<br/>da banca (Discente)"]:::discente --> e6
-    e6["Sessão pública de defesa<br/>(Banca)"]:::banca --> d2
-    d2{"Aprovação<br/>unânime?"}:::banca
-    d2 -->|Não| e8["Pode conceder nova defesa<br/>(Colegiado)"]:::colegiado
+    e4 --> e5
+    e5 --> e6
+    e6 --> d2
+    d2 -->|Não| e8
     e8 --> e6
     d2 -->|Sim| e7
-    e7["Entregar a versão final, a versão eletrônica<br/>e o termo de divulgação em até 60 dias (Discente)"]:::discente --> e9
-    e9["Conferir a quitação com a Biblioteca e<br/>enviar os documentos à PRPG (Secretaria)"]:::secretaria --> f1(["Diploma de Mestre expedido"]):::terminal
+    e7 --> e9
+    e9 --> f1
 
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef orientador fill:#E9F6EE,stroke:#2E8B57,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef colegiado fill:#F3ECFA,stroke:#7B4FB0,color:#111827
     classDef banca fill:#FDECEC,stroke:#B83A3A,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f1 terminal
+    class e1 orientador
+    class e2,e3,e3b,e5,e7 discente
+    class d1,e9 secretaria
+    class e4,e8 colegiado
+    class e6,d2 banca
 ```
 
 *Cores: azul = discente; verde = orientador(a); laranja = Secretaria; roxo = Colegiado; vermelho = banca.*

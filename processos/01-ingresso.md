@@ -29,30 +29,51 @@ Como se tornar aluno(a) do Mestrado Profissional em Modelagem Computacional e Si
 
 ```mermaid
 flowchart TD
-    i(["Edital aprovado pela PRPG e publicado"]):::terminal --> e1
-    e1["Ler o edital e os anexos<br/>(Candidato)"]:::discente --> e2
-    e2["Inscrever-se pelo site, escolher o orientador<br/>e enviar a documentação (Candidato)"]:::discente --> d1
-    d1{"Inscrição homologada?"}:::banca
-    d1 -->|Não| f0(["Fora do processo"]):::terminal
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Edital aprovado pela PRPG e publicado"])
+    e1["Ler o edital e os anexos<br/>(Candidato)"]
+    e2["Inscrever-se pelo site, escolher o orientador<br/>e enviar a documentação (Candidato)"]
+    d1{"Inscrição homologada?"}
+    f0(["Fora do processo"])
+    e3["Divulgar bancas, datas e horários<br/>(Comissão de seleção)"]
+    e4["Participar das etapas de avaliação<br/>(Candidato)"]
+    d2{"Aprovado(a) nas etapas<br/>eliminatórias?"}
+    e5["Pontuar as etapas classificatórias e<br/>publicar o resultado preliminar (Comissão)"]
+    e6["Interpor recurso, se for o caso<br/>(Candidato)"]
+    e7["Julgar recursos e publicar o resultado<br/>final (Comissão)"]
+    d3{"Classificado(a) dentro das<br/>vagas do orientador?"}
+    e8["Matrícula no prazo do calendário<br/>(Secretaria)"]
+    f1(["Discente regular do PPGMCS"])
+    e9["Aguardar convocação por desistência<br/>(Candidato)"]
+    f2(["Lista de espera"])
+
+    %% Ligações entre as etapas
+    inicio --> e1
+    e1 --> e2
+    e2 --> d1
+    d1 -->|Não| f0
     d1 -->|Sim| e3
-    e3["Divulgar bancas, datas e horários<br/>(Comissão de seleção)"]:::banca --> e4
-    e4["Participar das etapas de avaliação<br/>(Candidato)"]:::discente --> d2
-    d2{"Aprovado(a) nas etapas<br/>eliminatórias?"}:::banca
+    e3 --> e4
+    e4 --> d2
     d2 -->|Não| f0
     d2 -->|Sim| e5
-    e5["Pontuar as etapas classificatórias e<br/>publicar o resultado preliminar (Comissão)"]:::banca --> e6
-    e6["Interpor recurso, se for o caso<br/>(Candidato)"]:::discente --> e7
-    e7["Julgar recursos e publicar o resultado<br/>final (Comissão)"]:::banca --> d3
-    d3{"Classificado(a) dentro das<br/>vagas do orientador?"}:::banca
+    e5 --> e6
+    e6 --> e7
+    e7 --> d3
     d3 -->|Sim| e8
     d3 -->|Não| e9
-    e8["Matrícula no prazo do calendário<br/>(Secretaria)"]:::secretaria --> f1(["Discente regular do PPGMCS"]):::terminal
-    e9["Aguardar convocação por desistência<br/>(Candidato)"]:::discente --> f2(["Lista de espera"]):::terminal
+    e8 --> f1
+    e9 --> f2
 
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef banca fill:#FDECEC,stroke:#B83A3A,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f0,f1,f2 terminal
+    class e1,e2,e4,e6,e9 discente
+    class d1,e3,d2,e5,e7,d3 banca
+    class e8 secretaria
 ```
 
 *Cores: azul = candidato(a); vermelho = comissão de seleção; laranja = Secretaria.*

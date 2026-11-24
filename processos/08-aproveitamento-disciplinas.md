@@ -40,21 +40,38 @@ No PPGMCS, 1 crédito equivale a 15 horas-aula (Art. 37).
 
 ```mermaid
 flowchart TD
-    i(["Discente regular com disciplina cursada<br/>fora do currículo do PPGMCS"]):::terminal --> e1
-    e1["Reunir histórico, programa, ementa e<br/>carga horária da disciplina (Discente)"]:::discente --> e2
-    e2["Manifestar-se sobre a pertinência<br/>ao plano de estudos (Orientador)"]:::orientador --> e3
-    e3["Protocolar o pedido na Secretaria<br/>(Discente)"]:::discente --> e4
-    e4["Conferir documentos e limites:<br/>16 créditos, conceito B, 3 anos, 25% (Secretaria)"]:::secretaria --> d1
-    d1{"Aproveitamento<br/>deferido?"}:::colegiado
-    d1 -->|"Sim, total ou parcial"| e5["Registrar os créditos no histórico<br/>(Secretaria)"]:::secretaria
-    e5 --> f1(["Créditos aproveitados"]):::terminal
-    d1 -->|Não| f2(["Cursar os créditos no PPGMCS"]):::terminal
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Discente regular com disciplina cursada<br/>fora do currículo do PPGMCS"])
+    e1["Reunir histórico, programa, ementa e<br/>carga horária da disciplina (Discente)"]
+    e2["Manifestar-se sobre a pertinência<br/>ao plano de estudos (Orientador)"]
+    e3["Protocolar o pedido na Secretaria<br/>(Discente)"]
+    e4["Conferir documentos e limites:<br/>16 créditos, conceito B, 3 anos, 25% (Secretaria)"]
+    d1{"Aproveitamento<br/>deferido?"}
+    e5["Registrar os créditos no histórico<br/>(Secretaria)"]
+    f1(["Créditos aproveitados"])
+    f2(["Cursar os créditos no PPGMCS"])
 
+    %% Ligações entre as etapas
+    inicio --> e1
+    e1 --> e2
+    e2 --> e3
+    e3 --> e4
+    e4 --> d1
+    d1 -->|"Sim, total ou parcial"| e5
+    e5 --> f1
+    d1 -->|Não| f2
+
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef orientador fill:#E9F6EE,stroke:#2E8B57,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef colegiado fill:#F3ECFA,stroke:#7B4FB0,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f1,f2 terminal
+    class e1,e3 discente
+    class e2 orientador
+    class e4,e5 secretaria
+    class d1 colegiado
 ```
 
 *Cores: azul = discente; verde = orientador(a); laranja = Secretaria; roxo = Colegiado.*

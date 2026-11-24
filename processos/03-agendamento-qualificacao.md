@@ -47,33 +47,58 @@ Como o(a) discente solicita, organiza e realiza o Exame de Qualificação do Mes
 
 ```mermaid
 flowchart TD
-    i(["Discente com 12 créditos ou mais<br/>e Seminários aprovada"]):::terminal --> e1
-    e1["Elaborar o relatório da pesquisa<br/>(Discente)"]:::discente --> e2
-    e2["Definir banca de 3 doutores, data,<br/>horário e local (Orientador)"]:::orientador --> e3
-    e3["Preencher o requerimento e o Anexo I<br/>e colher a assinatura do orientador (Discente)"]:::discente --> e4
-    e4["Depositar o requerimento e o relatório<br/>na Secretaria (Discente)"]:::discente --> e5
-    e5["Protocolar e conferir os requisitos<br/>(Secretaria)"]:::secretaria --> d1
-    d1{"Documentação<br/>completa?"}:::secretaria
-    d1 -->|Não| e5b["Corrigir pendências e reapresentar<br/>(Discente)"]:::discente
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Discente com 12 créditos ou mais<br/>e Seminários aprovada"])
+    e1["Elaborar o relatório da pesquisa<br/>(Discente)"]
+    e2["Definir banca de 3 doutores, data,<br/>horário e local (Orientador)"]
+    e3["Preencher o requerimento e o Anexo I<br/>e colher a assinatura do orientador (Discente)"]
+    e4["Depositar o requerimento e o relatório<br/>na Secretaria (Discente)"]
+    e5["Protocolar e conferir os requisitos<br/>(Secretaria)"]
+    d1{"Documentação<br/>completa?"}
+    e5b["Corrigir pendências e reapresentar<br/>(Discente)"]
+    e6["Aprovar a comissão examinadora<br/>(Colegiado)"]
+    e7["Enviar o relatório aos membros<br/>da banca (Discente)"]
+    e8["Sessão: seminário de até 40 min<br/>e arguição (Banca)"]
+    d2{"Aprovado(a)?"}
+    e10["Realizar o 2º exame em até 30 dias<br/>(Discente)"]
+    d3{"Aprovado(a) no<br/>2º exame?"}
+    f2(["Desligamento – Regulamento, Art. 56, II"])
+    e9["Registrar a aprovação e lançar<br/>4 créditos (Secretaria)"]
+    f1(["Apto(a) a seguir para a defesa"])
+
+    %% Ligações entre as etapas
+    inicio --> e1
+    e1 --> e2
+    e2 --> e3
+    e3 --> e4
+    e4 --> e5
+    e5 --> d1
+    d1 -->|Não| e5b
     e5b --> e4
     d1 -->|Sim| e6
-    e6["Aprovar a comissão examinadora<br/>(Colegiado)"]:::colegiado --> e7
-    e7["Enviar o relatório aos membros<br/>da banca (Discente)"]:::discente --> e8
-    e8["Sessão: seminário de até 40 min<br/>e arguição (Banca)"]:::banca --> d2
-    d2{"Aprovado(a)?"}:::banca
+    e6 --> e7
+    e7 --> e8
+    e8 --> d2
     d2 -->|Sim| e9
-    d2 -->|Não| e10["Realizar o 2º exame em até 30 dias<br/>(Discente)"]:::discente
-    e10 --> d3{"Aprovado(a) no<br/>2º exame?"}:::banca
+    d2 -->|Não| e10
+    e10 --> d3
     d3 -->|Sim| e9
-    d3 -->|Não| f2(["Desligamento – Regulamento, Art. 56, II"]):::terminal
-    e9["Registrar a aprovação e lançar<br/>4 créditos (Secretaria)"]:::secretaria --> f1(["Apto(a) a seguir para a defesa"]):::terminal
+    d3 -->|Não| f2
+    e9 --> f1
 
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef orientador fill:#E9F6EE,stroke:#2E8B57,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef colegiado fill:#F3ECFA,stroke:#7B4FB0,color:#111827
     classDef banca fill:#FDECEC,stroke:#B83A3A,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f2,f1 terminal
+    class e1,e3,e4,e5b,e7,e10 discente
+    class e2 orientador
+    class e5,d1,e9 secretaria
+    class e6 colegiado
+    class e8,d2,d3 banca
 ```
 
 *Cores: azul = discente; verde = orientador(a); laranja = Secretaria; roxo = Colegiado; vermelho = banca.*

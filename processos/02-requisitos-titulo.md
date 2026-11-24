@@ -48,24 +48,43 @@ O que o(a) discente precisa cumprir, e em que prazos, para receber o diploma de 
 
 ```mermaid
 flowchart TD
-    i(["Matrícula como discente regular"]):::terminal --> e1
-    e1["Cursar disciplinas e renovar a matrícula<br/>a cada período (Discente)"]:::discente --> e2
-    e2["Cursar Seminários no 2º semestre,<br/>com o pré-projeto (Discente)"]:::discente --> e3
-    e3["Exame de Qualificação aprovado<br/>até o 14º mês: +4 créditos (Discente)"]:::discente --> e4
-    e4["Completar 28 créditos em disciplinas,<br/>com Créditos Especiais A (Discente)"]:::discente --> e5
-    e5["Depositar a dissertação<br/>até o 23º mês (Discente)"]:::discente --> d1
-    d1{"Aprovação unânime<br/>da banca?"}:::banca
-    d1 -->|Não| e5b["Nova defesa em até 6 meses,<br/>se proposta pela banca (Colegiado)"]:::colegiado
+    %% Etapas (texto da caixa e responsável)
+    inicio(["Matrícula como discente regular"])
+    e1["Cursar disciplinas e renovar a matrícula<br/>a cada período (Discente)"]
+    e2["Cursar Seminários no 2º semestre,<br/>com o pré-projeto (Discente)"]
+    e3["Exame de Qualificação aprovado<br/>até o 14º mês: +4 créditos (Discente)"]
+    e4["Completar 28 créditos em disciplinas,<br/>com Créditos Especiais A (Discente)"]
+    e5["Depositar a dissertação<br/>até o 23º mês (Discente)"]
+    d1{"Aprovação unânime<br/>da banca?"}
+    e5b["Nova defesa em até 6 meses,<br/>se proposta pela banca (Colegiado)"]
+    e6["Entregar a versão final em até 60 dias<br/>e a quitação da Biblioteca (Discente)"]
+    e7["Conferir requisitos e enviar<br/>documentos à PRPG (Secretaria)"]
+    f1(["Diploma expedido e registrado"])
+
+    %% Ligações entre as etapas
+    inicio --> e1
+    e1 --> e2
+    e2 --> e3
+    e3 --> e4
+    e4 --> e5
+    e5 --> d1
+    d1 -->|Não| e5b
     e5b --> d1
     d1 -->|Sim| e6
-    e6["Entregar a versão final em até 60 dias<br/>e a quitação da Biblioteca (Discente)"]:::discente --> e7
-    e7["Conferir requisitos e enviar<br/>documentos à PRPG (Secretaria)"]:::secretaria --> f1(["Diploma expedido e registrado"]):::terminal
+    e6 --> e7
+    e7 --> f1
 
+    %% Cores por responsável
     classDef discente fill:#E8F1FB,stroke:#2F6DB5,color:#111827
     classDef secretaria fill:#FFF4E0,stroke:#C27C0E,color:#111827
     classDef colegiado fill:#F3ECFA,stroke:#7B4FB0,color:#111827
     classDef banca fill:#FDECEC,stroke:#B83A3A,color:#111827
     classDef terminal fill:#1E3A5F,stroke:#1E3A5F,color:#FFFFFF
+    class inicio,f1 terminal
+    class e1,e2,e3,e4,e5,e6 discente
+    class d1 banca
+    class e5b colegiado
+    class e7 secretaria
 ```
 
 *Cores: azul = discente; vermelho = banca; roxo = Colegiado; laranja = Secretaria.*

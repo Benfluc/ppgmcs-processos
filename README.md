@@ -40,9 +40,12 @@ PENDENCIAS.md   Pontos em aberto para validação com a Coordenação
 
 1. Abra o arquivo do processo em `processos/` e edite o texto. No GitHub, use o ícone de lápis.
 2. Os **fluxogramas** são escritos em [Mermaid](https://mermaid.js.org/syntax/flowchart.html), dentro do bloco ` ```mermaid `. O GitHub desenha o diagrama automaticamente.
-   - Cada etapa é uma linha, como `e1["Texto da etapa<br/>(Responsável)"]:::discente --> e2`.
-   - Decisões usam chaves e setas rotuladas: `d1{"Pergunta?"}` e `d1 -->|Sim| e2`.
-   - As cores por responsável são as classes definidas no fim de cada bloco: `discente`, `orientador`, `secretaria`, `colegiado`, `banca` e `terminal`.
+   O bloco tem três partes:
+   - **Etapas:** uma por linha, como `e1["Texto da etapa<br/>(Responsável)"]`. Decisões usam chaves, como `d1{"Pergunta?"}`, e início e fim usam `(["..."])`.
+   - **Ligações:** uma por linha, como `e1 --> e2`. Ligações com rótulo ficam como `d1 -->|Sim| e2`.
+   - **Cores por responsável:** `class e1,e2 discente`. As classes disponíveis são `discente`, `orientador`, `secretaria`, `colegiado`, `banca` e `terminal`.
+
+   Para conferir o desenho antes de salvar, cole o bloco no [Mermaid Live Editor](https://mermaid.live).
 3. Mantenha os documentos **genéricos**. Datas, vagas e nomes de uma edição específica ficam no edital ou na comunicação da Secretaria, não aqui.
 4. Depois de editar, gere os PDFs de novo (abaixo) e faça o commit dos `.md` e dos `.pdf`.
 
