@@ -11,7 +11,6 @@ Documentação dos principais processos acadêmicos do **Mestrado Profissional e
 - prazos;
 - documentos.
 
-Os arquivos `.md` em `processos/` são a **fonte oficial** e podem ser editados por qualquer pessoa. Os PDFs em `pdf/` são gerados a partir deles, para impressão e envio.
 
 ## Processos
 
@@ -64,5 +63,6 @@ python3 scripts/gerar_pdfs.py 04   # gera só o processo 04
 - Resolução PPGMCS nº 004/2019: exame de qualificação e defesa
 - Resolução CEPEx nº 024/2021: reserva de vagas
 - Regulamento de 2022 e Resolução nº 003/2019, mantidos apenas como histórico
+Documentos disponíveis no atual [site do programa](https://ppgmcs.com.br)
 
-> Documentação informativa. Em caso de divergência, prevalecem as normas oficiais do PPGMCS e da Unimontes.
+> Documentação informativa em construção. Em caso de divergência, prevalecem as normas oficiais do PPGMCS e da Unimontes.
