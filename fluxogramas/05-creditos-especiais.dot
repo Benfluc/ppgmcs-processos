@@ -1,0 +1,25 @@
+digraph G {
+  graph [rankdir=TB, splines=ortho, nodesep=0.35, ranksep=0.32, bgcolor="transparent", fontname="Inter", pad=0.1];
+  node  [fontname="Inter", fontsize=10, penwidth=1.3, margin="0.12,0.06"];
+  edge  [fontname="Inter", fontsize=9, color="#6B7280", arrowsize=0.7, penwidth=1.1];
+  i [shape=box, style="rounded,filled,bold", fillcolor="#2F6DB5", color="#2F6DB5", fontcolor="white", label=<Produção ligada ao projeto<BR/>de dissertação>];
+  e1 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>DISCENTE</B></FONT><BR/>Publicar / apresentar /<BR/>depositar com participação<BR/>do orientador>];
+  e2 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>DISCENTE</B></FONT><BR/>Reunir comprovantes<BR/>(publicação, anais,<BR/>certificado, depósito)>];
+  e3 [shape=box, style="rounded,filled", fillcolor="#E9F6EE", color="#2E8B57", label=<<FONT POINT-SIZE="8" COLOR="#2E8B57"><B>ORIENTADOR(A)</B></FONT><BR/>Dar anuência ao pedido>];
+  e4 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>DISCENTE</B></FONT><BR/>Protocolar pedido na<BR/>Secretaria indicando a<BR/>disciplina (A, B ou C)>];
+  e5 [shape=box, style="rounded,filled", fillcolor="#FFF4E0", color="#C27C0E", label=<<FONT POINT-SIZE="8" COLOR="#C27C0E"><B>SECRETARIA DO PPGMCS</B></FONT><BR/>Conferir comprovantes e<BR/>enquadramento na tabela>];
+  d1 [shape=diamond, style=filled, fillcolor="#F3ECFA", color="#7B4FB0", label=<Colegiado homologa?>, fontsize=9.5];
+  e7 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>DISCENTE</B></FONT><BR/>Complementar comprovação ou<BR/>nova atividade>];
+  e6 [shape=box, style="rounded,filled", fillcolor="#FFF4E0", color="#C27C0E", label=<<FONT POINT-SIZE="8" COLOR="#C27C0E"><B>SECRETARIA DO PPGMCS</B></FONT><BR/>Lançar a disciplina (4<BR/>créditos) no histórico>];
+  f1 [shape=box, style="rounded,filled,bold", fillcolor="#2F6DB5", color="#2F6DB5", fontcolor="white", label=<Créditos Especiais<BR/>integralizados>];
+  i -> e1;
+  e1 -> e2;
+  e2 -> e3;
+  e3 -> e4;
+  e4 -> e5;
+  e5 -> d1;
+  d1 -> e6 [xlabel=" Sim ", fontcolor="#374151"];
+  d1 -> e7 [xlabel=" Não ", fontcolor="#374151"];
+  e7 -> e2;
+  e6 -> f1;
+}

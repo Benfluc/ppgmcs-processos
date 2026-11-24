@@ -1,0 +1,193 @@
+codigo: "01"
+titulo: Ingresso no Mestrado
+resumo: >-
+  Como se tornar aluno(a) do Mestrado Profissional em Modelagem Computacional e Sistemas: o processo
+  seletivo para aluno(a) regular, com as datas e os critérios do Edital 2027-1, e as outras formas de
+  admissão previstas no Regulamento (aluno especial, transferência e reopção).
+
+publico_alvo:
+  - Candidatos(as) ao Mestrado (graduados ou concluintes)
+  - Candidatos(as) a aluno(a) especial em disciplinas isoladas
+  - Docentes da Comissão de Seleção, Secretaria e Coordenação
+
+base_normativa:
+  - norma: Regulamento do PPGMCS (2024)
+    dispositivos: Arts. 25 a 32
+  - norma: Edital de Seleção 2027-1 (retificado)
+    dispositivos: Itens 1 a 11 e Anexos I a V
+  - norma: Resolução PPGMCS nº 001/2024
+    dispositivos: Art. 2º (linhas de pesquisa)
+  - norma: Resolução CEPEx nº 024/2021
+    dispositivos: Reserva de vagas (ações afirmativas)
+
+responsaveis:
+  - ator: colegiado
+    atribuicoes: Elaborar o edital, definir vagas e critérios e submetê-los à PRPG; julgar transferências e reopções; resolver casos omissos.
+  - ator: prpg
+    atribuicoes: Aprovar o edital antes da divulgação (é vedado divulgá-lo antes da aprovação).
+  - ator: candidato
+    atribuicoes: Escolher **um único orientador**, enviar a documentação completa pelo site, apresentar o pré-projeto e acompanhar todas as publicações.
+  - ator: comissao
+    atribuicoes: Conduzir o processo (4 docentes do PPGMCS), pontuar o currículo e divulgar resultados. A homologação das inscrições é feita por professores do Programa, e os recursos, por comissão própria de 3 docentes.
+  - ator: banca
+    atribuicoes: Avaliar a apresentação do pré-projeto (3 titulares e 1 suplente, docentes do PPGMCS).
+  - ator: secretaria
+    atribuicoes: Efetivar a matrícula dos classificados e enviar os dados de alunos transferidos à Secretaria Geral em até 15 dias.
+
+etapas:
+  - id: i
+    tipo: inicio
+    ator: colegiado
+    texto: Edital aprovado pela PRPG e publicado
+    para: e1
+  - id: e1
+    ator: candidato
+    texto: "Ler o edital (impugnação: até 21/10)"
+    titulo: Leitura e impugnação do edital
+    detalhe: Ler o edital e os anexos. Eventual impugnação deve ser feita até a data prevista no cronograma.
+    para: e2
+  - id: e2
+    ator: candidato
+    texto: Inscrever-se no site, escolhendo 1 orientador, e enviar documentos
+    titulo: Inscrição
+    detalhe: Inscrição exclusivamente pelo site do PPGMCS, com a escolha de **um** orientador do Anexo I e todos os documentos do item 2.1. A inscrição em vagas de mais de um orientador leva à desclassificação (item 3.3).
+    para: d1
+  - id: d1
+    tipo: decisao
+    ator: comissao
+    texto: Inscrição homologada?
+    para: {"Não": f0, "Sim": e3}
+  - id: e3
+    ator: comissao
+    texto: Divulgar bancas, horários e link (impugnação conforme cronograma)
+    titulo: Divulgação das bancas
+    detalhe: A comissão publica a banca de cada orientador, os horários e o link da videoconferência. Há prazo para impugnar membros por suspeição (Lei Estadual nº 14.184/2002).
+    para: e4
+  - id: e4
+    ator: candidato
+    texto: Apresentar o pré-projeto por videoconferência (até 25 min)
+    titulo: Apresentação do pré-projeto
+    detalhe: Apresentação de até 25 minutos, com infraestrutura e internet sob responsabilidade do(a) candidato(a). A ausência elimina do processo.
+    para: d2
+  - id: d2
+    tipo: decisao
+    ator: banca
+    texto: Nota ≥ 70 no pré-projeto?
+    para: {"Não": f0, "Sim": e5}
+  - id: e5
+    ator: comissao
+    texto: Pontuar o currículo (Anexo II) e somar as notas
+    titulo: Análise de currículo
+    detalhe: O currículo comprovado é pontuado conforme o Anexo II (máx. 100), considerando a aderência à linha do orientador. Nota final = currículo + pré-projeto (máx. 200).
+    para: e6
+  - id: e6
+    ator: comissao
+    texto: Publicar resultado preliminar
+    titulo: Resultado preliminar e recursos
+    detalhe: Recursos somente pelo site, com o formulário do Anexo V, até a data-limite. Recursos sem fundamentação ou fora do prazo são rejeitados.
+    para: e7
+  - id: e7
+    ator: comissao
+    texto: Julgar recursos e publicar resultado final
+    titulo: Resultado final
+    detalhe: Classificação em ordem decrescente por orientador. Desempate pela maior nota de currículo e, depois, pela maior nota do pré-projeto.
+    para: d3
+  - id: d3
+    tipo: decisao
+    ator: comissao
+    texto: Classificado(a) dentro das vagas do orientador?
+    para: {"Sim": e8, "Não": e9}
+  - id: e8
+    ator: secretaria
+    texto: Matrícula conforme calendário letivo
+    titulo: Matrícula
+    detalhe: O(a) candidato(a) apresenta os documentos exigidos no prazo. Quem não se matricula é considerado desistente, e a vaga pode ser oferecida ao próximo classificado.
+    para: f1
+  - id: e9
+    ator: candidato
+    texto: Aguardar desistências ou cursar 1 disciplina como aluno especial
+    titulo: Aprovado fora das vagas
+    detalhe: Pode ser convocado(a) em caso de desistência ou, havendo vaga, matricular-se em uma disciplina isolada como aluno especial (item 6.6).
+    para: f2
+  - id: f0
+    tipo: fim
+    ator: comissao
+    texto: Eliminado(a) do processo
+  - id: f1
+    tipo: fim
+    ator: discente
+    texto: Discente regular do PPGMCS
+  - id: f2
+    tipo: fim
+    ator: candidato
+    texto: Lista de espera / aluno especial
+
+secoes_extra:
+  - titulo: Cronograma do Edital 2027-1
+    tabela:
+      colunas: [Data, Atividade]
+      linhas:
+        - ["14/10", "Publicação do edital"]
+        - ["21/10", "Prazo final para impugnação do edital"]
+        - ["01 a 18/11", "Inscrições (site do PPGMCS)"]
+        - ["24/11", "Divulgação das bancas examinadoras"]
+        - ["27/11", "Prazo final para impugnação das bancas"]
+        - ["01 a 03/12", "Apresentação dos pré-projetos por videoconferência"]
+        - ["07/12", "Resultado preliminar"]
+        - ["11/12", "Data-limite para recursos"]
+        - ["16/12", "Resultado após recursos"]
+    nota: Datas válidas para o Edital 2027-1. Em cada edição, consulte o edital vigente no site do PPGMCS.
+  - titulo: Documentos para inscrição (item 2.1)
+    itens:
+      - Pré-projeto de dissertação (máx. 5 páginas) na linha do orientador pretendido, com título, resumo, introdução, objetivos, justificativa, hipótese, revisão da literatura, procedimentos metodológicos e cronograma.
+      - Diploma ou certidão de graduação, ou declaração de conclusão (ou previsão de conclusão) até a matrícula.
+      - Documento de identificação com foto.
+      - Histórico escolar da graduação.
+      - Currículo Lattes com **todos os itens comprovados**, numerados conforme o Anexo II.
+      - Anexo II preenchido.
+      - Declaração de categoria de ingresso (Anexo IV), somente para reserva de vagas.
+  - titulo: Avaliação
+    tabela:
+      colunas: [Etapa, Caráter, Pontuação]
+      linhas:
+        - ["Apresentação do pré-projeto (Anexo III): contextualização (20), viabilidade (20), hipótese (20), conteúdo (30), coerência (10)", "Eliminatória e classificatória (mínimo 70)", "0 a 100"]
+        - ["Análise de currículo (Anexo II)", "Classificatória", "0 a 100"]
+        - ["**Nota final**", "Soma das duas etapas", "**0 a 200**"]
+  - titulo: Vagas e reserva (Edital 2027-1)
+    tabela:
+      colunas: [Modalidade, Vagas, Observação]
+      linhas:
+        - ["Vagas regulares (demanda induzida, por orientador)", "Até 23", "Distribuídas conforme o Anexo I do edital"]
+        - ["Pessoas autodeclaradas negras", "7 (dentro das 23)", "Exige carta descritiva (Anexo IV); vagas não preenchidas revertem à ampla concorrência"]
+        - ["Indígenas", "+1 suplementar", "Declaração de 3 lideranças e documento da FUNAI"]
+        - ["Pessoas com deficiência", "+1 suplementar", "Laudo médico se classificado(a)"]
+        - ["Servidores técnico-administrativos da Unimontes", "+1 suplementar", "Cargo efetivo ou função pública na Unimontes"]
+    nota: "Linhas de pesquisa (Res. 001/2024): Modelagem Computacional no Contexto de Serviços; Modelagem Computacional no Contexto Industrial. Não há previsão de bolsas (item 7)."
+  - titulo: Outras formas de admissão
+    itens:
+      - "**Aluno(a) especial (Art. 31):** matrícula em disciplinas isoladas mediante processo seletivo próprio, sujeita a vaga e à aprovação do(a) docente da disciplina. Não confere título. Pode aproveitar até 16 créditos (conceito mínimo B) se ingressar como regular em até 3 anos (ver Processo 08)."
+      - "**Transferência e reopção (Art. 30):** pedido apreciado pelo Colegiado, com documentos e comprovante de vínculo no curso de origem. O(a) aluno(a) deve cursar no PPGMCS pelo menos 25% dos créditos exigidos."
+
+prazos:
+  - item: Divulgação dos dados do aluno transferido à Secretaria Geral
+    prazo: Até 15 dias após a admissão
+    fonte: Regulamento, Art. 30, §4º
+  - item: Vigência do edital
+    prazo: 6 meses, prorrogável por igual período
+    fonte: Edital 2027-1, item 11.5
+
+documentos:
+  - nome: Edital de Seleção vigente e anexos I a V
+    obs: Publicados nos sites da Unimontes e do PPGMCS.
+  - nome: Formulário de recurso (Anexo V)
+    obs: Protocolado apenas pelo site; o recibo chega por e-mail.
+
+observacoes:
+  - É responsabilidade do(a) candidato(a) acompanhar editais complementares e retificações.
+  - Documentação incompleta ou fora da ordem do Anexo II leva ao indeferimento da inscrição.
+  - O uso de documentos ou informações falsas elimina o(a) candidato(a) a qualquer tempo, mesmo após a matrícula.
+
+pendencias:
+  - "**Matrícula:** o edital remete ao \"calendário letivo em vigor\". Incluir as datas e a lista de documentos de matrícula de 2027-1."
+  - "**Reserva para pessoas negras:** como as vagas são por orientador, falta explicar como as 7 vagas reservadas se distribuem entre os orientadores."
+  - "**Endereço oficial:** o edital usa ppgmcs.com.br; os formulários do Programa usam ppgmcs.unimontes.br."

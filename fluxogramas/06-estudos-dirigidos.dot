@@ -1,0 +1,23 @@
+digraph G {
+  graph [rankdir=TB, splines=ortho, nodesep=0.35, ranksep=0.32, bgcolor="transparent", fontname="Inter", pad=0.1];
+  node  [fontname="Inter", fontsize=10, penwidth=1.3, margin="0.12,0.06"];
+  edge  [fontname="Inter", fontsize=9, color="#6B7280", arrowsize=0.7, penwidth=1.1];
+  i [shape=box, style="rounded,filled,bold", fillcolor="#2F6DB5", color="#2F6DB5", fontcolor="white", label=<Necessidade de estudo não<BR/>coberto pelas disciplinas<BR/>regulares>];
+  e1 [shape=box, style="rounded,filled", fillcolor="#E9F6EE", color="#2E8B57", label=<<FONT POINT-SIZE="8" COLOR="#2E8B57"><B>DOCENTE RESPONSÁVEL</B></FONT><BR/>Elaborar plano de ensino<BR/>(ementa, bibliografia, 60 h,<BR/>avaliação)>];
+  e2 [shape=box, style="rounded,filled", fillcolor="#E9F6EE", color="#2E8B57", label=<<FONT POINT-SIZE="8" COLOR="#2E8B57"><B>DOCENTE RESPONSÁVEL</B></FONT><BR/>Submeter a proposta de<BR/>oferta à Coordenação>];
+  d1 [shape=diamond, style=filled, fillcolor="#F3ECFA", color="#7B4FB0", label=<Oferta aprovada?>, fontsize=9.5];
+  e2b [shape=box, style="rounded,filled", fillcolor="#E9F6EE", color="#2E8B57", label=<<FONT POINT-SIZE="8" COLOR="#2E8B57"><B>DOCENTE RESPONSÁVEL</B></FONT><BR/>Ajustar a proposta>];
+  e3 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>DISCENTE</B></FONT><BR/>Matricular-se com anuência<BR/>do orientador>];
+  e4 [shape=box, style="rounded,filled", fillcolor="#E9F6EE", color="#2E8B57", label=<<FONT POINT-SIZE="8" COLOR="#2E8B57"><B>DOCENTE RESPONSÁVEL</B></FONT><BR/>Conduzir os estudos e<BR/>avaliar (conceito e<BR/>frequência)>];
+  e5 [shape=box, style="rounded,filled", fillcolor="#FFF4E0", color="#C27C0E", label=<<FONT POINT-SIZE="8" COLOR="#C27C0E"><B>SECRETARIA DO PPGMCS</B></FONT><BR/>Lançar o resultado no<BR/>histórico>];
+  f1 [shape=box, style="rounded,filled,bold", fillcolor="#2F6DB5", color="#2F6DB5", fontcolor="white", label=<4 créditos optativos>];
+  i -> e1;
+  e1 -> e2;
+  e2 -> d1;
+  d1 -> e2b [xlabel=" Não ", fontcolor="#374151"];
+  d1 -> e3 [xlabel=" Sim ", fontcolor="#374151"];
+  e2b -> e2;
+  e3 -> e4;
+  e4 -> e5;
+  e5 -> f1;
+}

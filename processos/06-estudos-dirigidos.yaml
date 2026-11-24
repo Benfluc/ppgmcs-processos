@@ -1,0 +1,119 @@
+codigo: "06"
+titulo: Disciplinas de Estudos Dirigidos
+resumo: >-
+  Estudos Dirigidos A, B e C são disciplinas optativas de ementa e bibliografia variáveis (4 créditos,
+  60 h cada). Permitem um estudo orientado sobre tema não coberto pelas disciplinas regulares.
+
+publico_alvo:
+  - Discentes regulares do Mestrado
+  - Orientadores(as) e docentes do PPGMCS
+  - Coordenação, Colegiado e Secretaria
+
+base_normativa:
+  - norma: Resolução PPGMCS nº 001/2024
+    dispositivos: Arts. 3º (Tabela 1) e 11
+  - norma: Regulamento do PPGMCS (2024)
+    dispositivos: Arts. 17 (XVI e XXVII), 32, 37, 38
+
+responsaveis:
+  - ator: discente
+    atribuicoes: Propor o tema com o(a) orientador(a), matricular-se e cumprir as atividades e avaliações.
+  - ator: docente
+    atribuicoes: Elaborar o plano de ensino (ementa, bibliografia, cronograma, avaliação), conduzir a disciplina e lançar conceito e frequência.
+  - ator: orientador
+    atribuicoes: Dar anuência à matrícula (Regulamento, Art. 32, §1º).
+  - ator: colegiado
+    atribuicoes: Aprovar a oferta e as diretrizes da disciplina (Art. 17, XVI e XXVII).
+  - ator: secretaria
+    atribuicoes: Registrar a oferta e a matrícula e lançar o resultado.
+
+aviso:
+  titulo: Fluxo proposto — sem regulamentação específica
+  texto: As normas consultadas apenas criam as disciplinas (optativas, 4 créditos, ementa variável). O fluxo abaixo aplica as regras gerais de oferta, matrícula e avaliação do Regulamento e precisa ser validado pela Coordenação.
+
+secoes_extra:
+  - titulo: O que está definido
+    tabela:
+      colunas: [Disciplina, Tipo, Carga horária, Créditos, Ementa]
+      linhas:
+        - ["Estudos Dirigidos A", "Optativa", "60 h", "4", "Variável"]
+        - ["Estudos Dirigidos B", "Optativa", "60 h", "4", "Variável"]
+        - ["Estudos Dirigidos C", "Optativa", "60 h", "4", "Variável"]
+    nota: Aprovação com conceito mínimo C e 75% de frequência (Regulamento, Art. 38).
+  - titulo: Conteúdo sugerido para o plano de ensino
+    itens:
+      - Tema e justificativa (relação com a linha de pesquisa ou com o projeto)
+      - Ementa e objetivos
+      - Bibliografia
+      - Cronograma das 60 horas (leituras, encontros, produtos)
+      - Forma de avaliação e controle de frequência
+
+etapas:
+  - id: i
+    tipo: inicio
+    ator: discente
+    texto: Necessidade de estudo não coberto pelas disciplinas regulares
+    para: e1
+  - id: e1
+    ator: docente
+    texto: Elaborar plano de ensino (ementa, bibliografia, 60 h, avaliação)
+    titulo: Plano de ensino
+    detalhe: O(a) docente responsável, em geral junto ao(à) orientador(a), elabora o plano.
+    para: e2
+  - id: e2
+    ator: docente
+    texto: Submeter a proposta de oferta à Coordenação
+    titulo: Submissão
+    detalhe: Enviar a proposta antes do período de matrícula, indicando a letra (A, B ou C).
+    para: d1
+  - id: d1
+    tipo: decisao
+    ator: colegiado
+    texto: Oferta aprovada?
+    para: {"Não": e2b, "Sim": e3}
+  - id: e2b
+    ator: docente
+    texto: Ajustar a proposta
+    titulo: Ajustes
+    detalhe: Se houver ajustes, o(a) docente revisa e reapresenta a proposta.
+    para: e2
+  - id: e3
+    ator: discente
+    texto: Matricular-se com anuência do orientador
+    titulo: Matrícula
+    detalhe: Matrícula no período previsto no calendário, com anuência do(a) orientador(a).
+    para: e4
+  - id: e4
+    ator: docente
+    texto: Conduzir os estudos e avaliar (conceito e frequência)
+    titulo: Realização e avaliação
+    detalhe: O(a) docente conduz as atividades e atribui conceito (A a F) e frequência.
+    para: e5
+  - id: e5
+    ator: secretaria
+    texto: Lançar o resultado no histórico
+    titulo: Registro
+    detalhe: Com conceito ≥ C e frequência ≥ 75%, são lançados 4 créditos optativos.
+    para: f1
+  - id: f1
+    tipo: fim
+    ator: discente
+    texto: 4 créditos optativos
+
+prazos:
+  - item: Submissão da proposta de oferta
+    prazo: Não definido em norma
+    fonte: "—"
+  - item: Matrícula
+    prazo: Período de matrícula do calendário escolar
+    fonte: Regulamento, Art. 32
+
+documentos:
+  - nome: Plano de ensino da disciplina
+    obs: Não há modelo oficial nos documentos consultados.
+
+pendencias:
+  - "**Rito:** confirmar quem propõe (orientador ou qualquer docente credenciado), o prazo de submissão e se a aprovação é do Colegiado ou da Coordenação."
+  - "**Oferta individual:** confirmar se a disciplina pode ser oferecida a um único discente ou se exige turma mínima."
+  - "**Limite:** confirmar se o(a) discente pode cursar A, B e C (até 12 créditos optativos)."
+  - "**Relação com a dissertação:** confirmar se o conteúdo pode ser parte do trabalho da dissertação ou deve ser distinto."

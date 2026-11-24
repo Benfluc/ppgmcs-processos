@@ -1,0 +1,183 @@
+codigo: "03"
+titulo: Agendamento do Exame de Qualificação
+resumo: >-
+  Como o(a) discente solicita, organiza e realiza o Exame de Qualificação do Mestrado, etapa obrigatória
+  que vale 4 créditos e é pré-requisito para a defesa da dissertação.
+
+publico_alvo:
+  - Discentes regulares do Mestrado
+  - Orientadores(as) e coorientadores(as)
+  - Secretaria e Coordenação do PPGMCS
+
+base_normativa:
+  - norma: Regulamento do PPGMCS (2024)
+    dispositivos: Art. 41; Art. 44, II; Art. 56, II
+  - norma: Resolução PPGMCS nº 004/2019
+    dispositivos: Arts. 1º a 4º
+  - norma: Resolução PPGMCS nº 001/2024
+    dispositivos: Arts. 5º e 9º
+
+responsaveis:
+  - ator: discente
+    atribuicoes: Cumprir os requisitos, preencher o requerimento e o Anexo I, depositar o relatório na Secretaria, enviar cópias à banca e apresentar o seminário.
+  - ator: orientador
+    atribuicoes: Autorizar a inscrição (assinatura no requerimento), propor banca, data e local, e presidir a sessão.
+  - ator: secretaria
+    atribuicoes: Protocolar o pedido, conferir a documentação, encaminhar ao Colegiado e registrar o resultado no histórico.
+  - ator: colegiado
+    atribuicoes: Aprovar a comissão examinadora e decidir casos não previstos.
+  - ator: banca
+    atribuicoes: Avaliar o relatório e o seminário, arguir o(a) discente e emitir o resultado.
+
+requisitos:
+  - Ser discente regular, com matrícula ativa.
+  - Ter integralizado **pelo menos 12 créditos** em disciplinas (Res. 004/2019, Art. 3º, d).
+  - Ter sido **aprovado(a) na disciplina Seminários** (Res. 004/2019, Art. 3º, c).
+  - Apresentar o **relatório do trabalho de investigação** (ver conteúdo abaixo).
+  - Apresentar o **requerimento de inscrição com autorização do(a) orientador(a)**.
+
+secoes_extra:
+  - titulo: Conteúdo obrigatório do relatório
+    texto: "O relatório deve demonstrar a perspectiva de conclusão da dissertação dentro do prazo (Res. 004/2019, Art. 3º, a). Tópicos:"
+    itens:
+      - Introdução com base teórica que fundamenta o trabalho
+      - Objetivos propostos
+      - Metodologias envolvidas
+      - Resultados preliminares
+      - Principais produtos a serem desenvolvidos
+      - Proposta de continuidade, com cronograma
+  - titulo: Comissão examinadora e sessão
+    itens:
+      - "Composição: **3 membros com título de Doutor** (Res. 004/2019, Art. 4º)."
+      - "Apresentação oral do(a) discente: **até 40 minutos**."
+      - "Arguição: **até 30 minutos por examinador**."
+      - Cópias do relatório (digitais ou impressas) são enviadas aos membros **pelo(a) próprio(a) discente**.
+
+etapas:
+  - id: i
+    tipo: inicio
+    ator: discente
+    texto: Discente com ≥ 12 créditos e Seminários aprovada
+    para: e1
+  - id: e1
+    ator: discente
+    texto: Elaborar relatório da pesquisa
+    titulo: Elaborar o relatório
+    detalhe: Redigir o relatório com os tópicos exigidos e revisá-lo com o(a) orientador(a).
+    para: e2
+  - id: e2
+    ator: orientador
+    texto: Definir banca (3 doutores), data, horário e local
+    titulo: Definir banca e data
+    detalhe: O(a) orientador(a) indica os três membros, a data, o horário e o local (ou link), observando o prazo-limite de 14 meses de curso.
+    para: e3
+  - id: e3
+    ator: discente
+    texto: Preencher requerimento + Anexo I e colher assinatura do orientador
+    titulo: Preencher o requerimento
+    detalhe: Preencher o Requerimento de Inscrição no Exame de Qualificação e o Anexo I (dados do aluno, título, data, local, horário e banca), com assinatura do(a) discente e do(a) orientador(a).
+    para: e4
+  - id: e4
+    ator: discente
+    texto: Depositar requerimento e relatório na Secretaria
+    titulo: Depositar na Secretaria
+    detalhe: Entregar o requerimento e uma cópia do relatório. A partir deste depósito, o exame deve ocorrer em até 2 meses.
+    para: e5
+  - id: e5
+    ator: secretaria
+    texto: Protocolar e conferir requisitos
+    titulo: Conferência
+    detalhe: A Secretaria registra o protocolo e confere créditos, aprovação em Seminários e documentos.
+    para: d1
+  - id: d1
+    tipo: decisao
+    ator: secretaria
+    texto: Documentação completa?
+    para: {"Não": e5b, "Sim": e6}
+  - id: e5b
+    ator: discente
+    texto: Corrigir pendências e reapresentar
+    titulo: Corrigir pendências
+    detalhe: Se faltar algo, o(a) discente complementa a documentação e reapresenta o pedido.
+    para: e4
+  - id: e6
+    ator: colegiado
+    texto: Aprovar comissão examinadora
+    titulo: Aprovação da banca
+    detalhe: O Colegiado aprova a comissão examinadora (Regulamento, Art. 17, XXIII). A Secretaria divulga data e local.
+    para: e7
+  - id: e7
+    ator: discente
+    texto: Enviar o relatório aos membros da banca
+    titulo: Envio à banca
+    detalhe: O(a) discente envia o relatório (digital ou impresso) a cada membro com antecedência razoável.
+    para: e8
+  - id: e8
+    ator: banca
+    texto: "Sessão: seminário (até 40 min) + arguição (até 30 min por examinador)"
+    titulo: Realização do exame
+    detalhe: O(a) discente apresenta o seminário; em seguida, cada examinador argui o trabalho.
+    para: d2
+  - id: d2
+    tipo: decisao
+    ator: banca
+    texto: Aprovado(a)?
+    para: {"Sim": e9, "Não": e10}
+  - id: e9
+    ator: secretaria
+    texto: Registrar aprovação e lançar 4 créditos
+    titulo: Registro
+    detalhe: A Secretaria arquiva a ata e lança os 4 créditos do exame de qualificação no histórico.
+    para: f1
+  - id: e10
+    ator: discente
+    texto: Realizar 2º exame em até 30 dias
+    titulo: Segundo exame
+    detalhe: Em caso de reprovação, o segundo exame deve ser feito em até 30 dias após o primeiro. Se não for realizado no prazo, o(a) discente é considerado(a) reprovado(a) novamente.
+    para: d3
+  - id: d3
+    tipo: decisao
+    ator: banca
+    texto: Aprovado(a) no 2º exame?
+    para: {"Sim": e9, "Não": f2}
+  - id: f1
+    tipo: fim
+    ator: discente
+    texto: Apto(a) a seguir para a defesa
+  - id: f2
+    tipo: fim
+    ator: colegiado
+    texto: Desligamento (Regulamento, Art. 56, II)
+
+prazos:
+  - item: Cumprir os créditos do exame de qualificação (exame realizado e aprovado)
+    prazo: "**Até o 14º mês** do curso"
+    fonte: Res. 001/2024, Art. 9º
+  - item: Realização do exame após o depósito do pedido
+    prazo: Até 2 meses
+    fonte: Res. 004/2019, Art. 1º, II
+  - item: Segundo exame, em caso de reprovação
+    prazo: Até 30 dias após o primeiro
+    fonte: Res. 004/2019, Art. 1º, III
+  - item: Antecedência mínima para o pedido
+    prazo: Não definida em norma
+    fonte: "—"
+
+documentos:
+  - nome: Requerimento de Inscrição no Exame de Qualificação + Anexo I
+    obs: Assinado pelo(a) discente e pelo(a) orientador(a).
+  - nome: Relatório do trabalho de investigação (1 cópia para a Secretaria)
+    obs: Cópias para a banca enviadas pelo(a) discente.
+  - nome: Comprovante de créditos e de aprovação em Seminários
+    obs: Conferido pela Secretaria no histórico.
+
+observacoes:
+  - Não completar a qualificação no prazo leva ao **desligamento automático** (Regulamento, Art. 56, II).
+  - "Ordem de leitura dos prazos: o exame deve estar concluído até o 14º mês. Na prática, o pedido precisa ser depositado com folga para que a banca e a eventual segunda tentativa (30 dias) caibam nesse limite."
+  - O requisito de ter assistido a cinco defesas, previsto no Art. 3º, e, da Res. 004/2019, **não é mais exigido**, conforme orientação da Coordenação.
+
+pendencias:
+  - "**Prazo:** a Res. 004/2019 (Art. 1º, I) fala em inscrição até o 18º mês; a Res. 001/2024 (Art. 9º), mais recente, fixa a conclusão em até 14 meses. Este documento adota os 14 meses."
+  - "**Formulário desatualizado:** o requerimento é endereçado ao Prof. Renê Rodrigues Veloso e cita o \"Capítulo XV do Regimento interno\", que não existe no Regulamento de 2024."
+  - "**Banca:** a Res. 004/2019 não diz se o(a) orientador(a) conta entre os 3 membros nem se há suplente ou membro externo."
+  - "**Dispensa das cinco defesas assistidas:** confirmar o ato formal (resolução ou deliberação do Colegiado) que revoga o Art. 3º, e, da Res. 004/2019."

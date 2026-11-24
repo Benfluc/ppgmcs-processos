@@ -1,0 +1,37 @@
+digraph G {
+  graph [rankdir=TB, splines=ortho, nodesep=0.35, ranksep=0.32, bgcolor="transparent", fontname="Inter", pad=0.1];
+  node  [fontname="Inter", fontsize=10, penwidth=1.3, margin="0.12,0.06"];
+  edge  [fontname="Inter", fontsize=9, color="#6B7280", arrowsize=0.7, penwidth=1.1];
+  i [shape=box, style="rounded,filled,bold", fillcolor="#7B4FB0", color="#7B4FB0", fontcolor="white", label=<Edital aprovado pela PRPG e<BR/>publicado>];
+  e1 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>CANDIDATO(A)</B></FONT><BR/>Ler o edital (impugnação:<BR/>até 21/10)>];
+  e2 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>CANDIDATO(A)</B></FONT><BR/>Inscrever-se no site,<BR/>escolhendo 1 orientador, e<BR/>enviar documentos>];
+  d1 [shape=diamond, style=filled, fillcolor="#FDECEC", color="#B83A3A", label=<Inscrição homologada?>, fontsize=9.5];
+  e3 [shape=box, style="rounded,filled", fillcolor="#FDECEC", color="#B83A3A", label=<<FONT POINT-SIZE="8" COLOR="#B83A3A"><B>COMISSÃO DE SELEÇÃO</B></FONT><BR/>Divulgar bancas, horários e<BR/>link (impugnação conforme<BR/>cronograma)>];
+  e4 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>CANDIDATO(A)</B></FONT><BR/>Apresentar o pré-projeto por<BR/>videoconferência (até 25<BR/>min)>];
+  d2 [shape=diamond, style=filled, fillcolor="#FDECEC", color="#B83A3A", label=<Nota ≥ 70 no<BR/>pré-projeto?>, fontsize=9.5];
+  e5 [shape=box, style="rounded,filled", fillcolor="#FDECEC", color="#B83A3A", label=<<FONT POINT-SIZE="8" COLOR="#B83A3A"><B>COMISSÃO DE SELEÇÃO</B></FONT><BR/>Pontuar o currículo (Anexo<BR/>II) e somar as notas>];
+  e6 [shape=box, style="rounded,filled", fillcolor="#FDECEC", color="#B83A3A", label=<<FONT POINT-SIZE="8" COLOR="#B83A3A"><B>COMISSÃO DE SELEÇÃO</B></FONT><BR/>Publicar resultado<BR/>preliminar>];
+  e7 [shape=box, style="rounded,filled", fillcolor="#FDECEC", color="#B83A3A", label=<<FONT POINT-SIZE="8" COLOR="#B83A3A"><B>COMISSÃO DE SELEÇÃO</B></FONT><BR/>Julgar recursos e publicar<BR/>resultado final>];
+  d3 [shape=diamond, style=filled, fillcolor="#FDECEC", color="#B83A3A", label=<Classificado(a) dentro<BR/>das vagas do orientador?>, fontsize=9.5];
+  e8 [shape=box, style="rounded,filled", fillcolor="#FFF4E0", color="#C27C0E", label=<<FONT POINT-SIZE="8" COLOR="#C27C0E"><B>SECRETARIA DO PPGMCS</B></FONT><BR/>Matrícula conforme<BR/>calendário letivo>];
+  e9 [shape=box, style="rounded,filled", fillcolor="#E8F1FB", color="#2F6DB5", label=<<FONT POINT-SIZE="8" COLOR="#2F6DB5"><B>CANDIDATO(A)</B></FONT><BR/>Aguardar desistências ou<BR/>cursar 1 disciplina como<BR/>aluno especial>];
+  f0 [shape=box, style="rounded,filled,bold", fillcolor="#B83A3A", color="#B83A3A", fontcolor="white", label=<Eliminado(a) do processo>];
+  f1 [shape=box, style="rounded,filled,bold", fillcolor="#2F6DB5", color="#2F6DB5", fontcolor="white", label=<Discente regular do PPGMCS>];
+  f2 [shape=box, style="rounded,filled,bold", fillcolor="#2F6DB5", color="#2F6DB5", fontcolor="white", label=<Lista de espera / aluno<BR/>especial>];
+  i -> e1;
+  e1 -> e2;
+  e2 -> d1;
+  d1 -> f0 [xlabel=" Não ", fontcolor="#374151"];
+  d1 -> e3 [xlabel=" Sim ", fontcolor="#374151"];
+  e3 -> e4;
+  e4 -> d2;
+  d2 -> f0 [xlabel=" Não ", fontcolor="#374151"];
+  d2 -> e5 [xlabel=" Sim ", fontcolor="#374151"];
+  e5 -> e6;
+  e6 -> e7;
+  e7 -> d3;
+  d3 -> e8 [xlabel=" Sim ", fontcolor="#374151"];
+  d3 -> e9 [xlabel=" Não ", fontcolor="#374151"];
+  e8 -> f1;
+  e9 -> f2;
+}
